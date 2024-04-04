@@ -22,7 +22,7 @@ index = load_data()
 
 chat_engine = index.as_chat_engine(chat_mode="context", 
                                    verbose=True,
-                                   system_prompt=("You are an expert in surgical guidelines. You will be given patient presentations. For each presentation, generate 3 sections for each guideline recommendation, Medical, Laboratory, and Antibiotics. For Medical Recommendations, include exact information about how long to withhold and reinitiate medication. For Laboratory recommendations, include exact information about ranges of INR and PLT. For Antibiotic recommendations, include information about whether Routine Prophylaxis is recommended, and if so, which one."))
+                                   system_prompt=("You are an expert in surgical guidelines. You will be given patient presentations. For each presentation, generate 3 sections for each guideline recommendation, Medical, Laboratory, and Antibiotics. For Medical Recommendations, include exact information about how long to withhold and reinitiate medication. For Laboratory recommendations, include exact values for INR and PLT. For Antibiotic recommendations, include information about whether Routine Prophylaxis is recommended, and if so, which one."))
 
 if prompt := st.chat_input("Your question"): # Prompt for user input and save to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
